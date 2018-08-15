@@ -5,7 +5,11 @@ Data Analyst Track - One Million Arab Coders ..Every thing you need related to t
 
 1.mean
 
-2.variance
+2.medien
 
-3.standard_deviation
+3.five_number_summary
+
+4.variance
+
+5.standard_deviation
 

@@ -36,6 +36,24 @@ class DataAnalyst:
             return (num1 + num2) / 2
 
 
+    def five_number_summary(self):
+
+        data.sort()
+
+        minimum = min(data)
+        maximum = max(data)
+        Q2 = medien(data)
+
+        index = len(data)
+
+        if index % 2 != 0:
+            Q1 = medien(data[:(int(((index + 1) / 2 - 1)))])
+            Q3 = medien(data[int(((index + 1) / 2)):])
+        else:
+            Q1 = medien(data[:(int(((index + 1) / 2)))])
+            Q3 = medien(data[int(((index + 1) / 2)):])
+        return minimum, Q1, Q2, Q3, maximum
+
     def variance(self):
         """AVERAGE SQUARED DIFFERANCE OF EACH OBSERVATION FROM THE MEAN"""
         mean = self.mean()
@@ -45,7 +63,7 @@ class DataAnalyst:
             l.append( (num - mean)**2 )
 
         variance = sum(l) / len(l)
-        print("Variance is:", variance)
+        # print("Variance is:", variance)
         return variance
 
 
@@ -54,7 +72,7 @@ class DataAnalyst:
         Standard deviation is the square root of the variance
         """
         standard_deviation = math.sqrt(self.variance())
-        print("Standard deviation is", standard_deviation)
+        # print("Standard deviation is", standard_deviation)
         return standard_deviation
 
 
