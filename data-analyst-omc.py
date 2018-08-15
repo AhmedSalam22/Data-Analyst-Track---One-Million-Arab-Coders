@@ -1,3 +1,5 @@
+import math
+
 class DataAnalyst:
 
     data = list()
@@ -33,6 +35,16 @@ class DataAnalyst:
         return variance
 
 
+    def standard_deviation(self):
+        """on average how much each point varies from the mean of the points,
+        Standard deviation is the square root of the variance
+        """
+        standard_deviation = math.sqrt(self.variance())
+        print("Standard deviation is", standard_deviation)
+        return standard_deviation
 
 
 
+a = DataAnalyst()
+a.data = [10,10,4,16]
+a.standard_deviation()
