@@ -20,3 +20,19 @@ class DataAnalyst:
 
         return total / len(self.data)
 
+    def variance(self):
+        """AVERAGE SQUARED DIFFERANCE OF EACH OBSERVATION FROM THE MEAN"""
+        mean = self.mean()
+
+        l = list()
+        for num in self.data:
+            l.append( (num - mean)**2 )
+
+        variance = sum(l) / len(l)
+        print("Variance is:", variance)
+        return variance
+
+
+
+
+
