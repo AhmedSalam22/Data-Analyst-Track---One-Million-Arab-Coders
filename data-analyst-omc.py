@@ -22,6 +22,20 @@ class DataAnalyst:
 
         return total / len(self.data)
 
+    def medien(data):
+
+        data.sort()
+        index = len(data)
+
+        # this mean values of our data is odd number
+        if len(data) % 2 != 0:
+            return data[int(((index + 1) / 2 - 1))]
+        else:
+            num1 = data[int(((index / 2) - 1))]
+            num2 = data[int((index / 2))]
+            return (num1 + num2) / 2
+
+
     def variance(self):
         """AVERAGE SQUARED DIFFERANCE OF EACH OBSERVATION FROM THE MEAN"""
         mean = self.mean()
@@ -45,6 +59,7 @@ class DataAnalyst:
 
 
 
+
 a = DataAnalyst()
-a.data = [10,10,4,16]
+a.data = [1, 5, 10, 3, 8, 12, 4]
 a.standard_deviation()
