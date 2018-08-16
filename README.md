@@ -9,7 +9,9 @@ Data Analyst Track - One Million Arab Coders ..Every thing you need related to t
 
 3.five_number_summary
 
-4.variance
+4.range_
 
-5.standard_deviation
+5.variance
+
+6.standard_deviation
 

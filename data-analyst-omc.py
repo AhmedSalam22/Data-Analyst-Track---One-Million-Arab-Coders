@@ -4,8 +4,8 @@ class DataAnalyst:
 
     data = list()
 
-    def __init__(self):
-        pass
+    # def __init__(self,userdata):
+    #     self.data = userdata
 
     def mean(self):
         """We calculate the mean by adding all of our values together, and dividing by the number of values in our dataset"""
@@ -22,37 +22,42 @@ class DataAnalyst:
 
         return total / len(self.data)
 
-    def medien(data):
+    def medien(self,data):
 
-        data.sort()
-        index = len(data)
+        self.data.sort()
+        index = len(self.data)
 
         # this mean values of our data is odd number
-        if len(data) % 2 != 0:
-            return data[int(((index + 1) / 2 - 1))]
+        if len(self.data) % 2 != 0:
+            return self.data[int(((index + 1) / 2 - 1))]
         else:
-            num1 = data[int(((index / 2) - 1))]
-            num2 = data[int((index / 2))]
+            num1 = self.data[int(((index / 2) - 1))]
+            num2 = self.data[int((index / 2))]
             return (num1 + num2) / 2
 
 
     def five_number_summary(self):
 
-        data.sort()
+        self.data.sort()
 
-        minimum = min(data)
-        maximum = max(data)
-        Q2 = medien(data)
+        minimum = min(self.data)
+        maximum = max(self.data)
+        Q2 = self.medien(self.data)
 
-        index = len(data)
+        index = len(self.data)
 
         if index % 2 != 0:
-            Q1 = medien(data[:(int(((index + 1) / 2 - 1)))])
-            Q3 = medien(data[int(((index + 1) / 2)):])
+            Q1 = self.medien(self.data[:(int(((index + 1) / 2 - 1)))])
+            Q3 = self.medien(self.data[int(((index + 1) / 2)):])
         else:
-            Q1 = medien(data[:(int(((index + 1) / 2)))])
-            Q3 = medien(data[int(((index + 1) / 2)):])
+            Q1 = self.medien(self.data[:(int(((index + 1) / 2)))])
+            Q3 = self.medien(self.data[int(((index + 1) / 2)):])
         return minimum, Q1, Q2, Q3, maximum
+
+    def range_(self):
+        minimum,maximum = self.five_number_summary()[0::4]
+        return maximum - minimum
+
 
     def variance(self):
         """AVERAGE SQUARED DIFFERANCE OF EACH OBSERVATION FROM THE MEAN"""
@@ -65,6 +70,7 @@ class DataAnalyst:
         variance = sum(l) / len(l)
         # print("Variance is:", variance)
         return variance
+
 
 
     def standard_deviation(self):
@@ -80,4 +86,5 @@ class DataAnalyst:
 
 a = DataAnalyst()
 a.data = [1, 5, 10, 3, 8, 12, 4]
-a.standard_deviation()
+print(a.data)
+print(a.range_())
