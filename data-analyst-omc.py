@@ -58,6 +58,10 @@ class DataAnalyst:
         minimum,maximum = self.five_number_summary()[0::4]
         return maximum - minimum
 
+    def interquartile(self):
+        Q1,Q3 = self.five_number_summary()[1:-1:2]
+        return Q3 - Q1
+
 
     def variance(self):
         """AVERAGE SQUARED DIFFERANCE OF EACH OBSERVATION FROM THE MEAN"""
