@@ -11,7 +11,9 @@ Data Analyst Track - One Million Arab Coders ..Every thing you need related to t
 
 4.range_
 
-5.variance
+5.interquartilerange
 
-6.standard_deviation
+6.variance
+
+7.standard_deviation
 
