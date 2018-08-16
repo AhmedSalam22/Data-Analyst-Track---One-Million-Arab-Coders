@@ -34,6 +34,20 @@ class DataAnalyst:
             num2 = data[int((index / 2))]
             return (num1 + num2) / 2
 
+    def mode(self,data):
+        dic = {}
+        for num in data:
+            dic[num] = dic.get(num, 0) + 1
+
+        result = []
+        for key, value in dic.items():
+            if dic[key] == max(dic.values()):
+                result.append(key)
+
+        if len(result) * dic.get(result[0]) == len(data):
+            return "No Model"
+
+        return result
 
     def five_number_summary(self,data):
 

@@ -7,13 +7,15 @@ Data Analyst Track - One Million Arab Coders ..Every thing you need related to t
 
 2.medien
 
-3.five_number_summary
+3.mode
 
-4.range_
+4.five_number_summary
 
-5.interquartilerange
+5.range_
 
-6.variance
+6.interquartilerange
 
-7.standard_deviation
+7.variance
+
+8.standard_deviation
 
